@@ -95,6 +95,7 @@ void TaskManager::doingTask() {
         outer("Task was done: " + to_string(e->time));
         this_thread::sleep_for((1ms) * e->time);
     }
+    outer("All Tasks were done!");
 }
 
 void TaskManager::addTasks(int times, int randomTime) {
@@ -118,8 +119,8 @@ void TaskManager::outer(string text) {
 int main() {
     TaskManager exercisesList;
     exercisesList.addTasks(10, 850);
-    std::thread solver(&TaskManager::doingTask, &exercisesList);
-    std::thread adder(&TaskManager::addTasks, &exercisesList, 20, 600);
+    thread solver(&TaskManager::doingTask, &exercisesList);
+    thread adder(&TaskManager::addTasks, &exercisesList, 20, 600);
     solver.join();
     adder.join();
     return 0;
