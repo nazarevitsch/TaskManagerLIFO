@@ -60,3 +60,8 @@ Finishing work of first thread for adding tasks and last part of work second thr
 with solving ad deleting tasks from stack.
 
 ![Test Image 1](images/step_3.png)
+
+Graph
+
+![Test Image 1](images/2.png)
+
